@@ -277,10 +277,17 @@ body {
 
 /* O mapa ocupa quase toda a tela disponível */
 #mapa {
-  width: 100%;
-  height: calc(100vh - 200px);
+  width: 100% !important;
+  height: calc(100vh - 200px) !important;
   border-radius: var(--radius-md);
   box-shadow: var(--sombra-suave);
+  position: relative;
+  z-index: 1;
+}
+
+.leaflet-container {
+  width: 100% !important;
+  height: 100% !important;
 }
 
 /* ---------- ABA CONFIGURAÇÕES ---------- */
