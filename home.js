@@ -236,10 +236,9 @@ function inicializarMapa() {
   const mapa = L.map('mapa').setView([lat, lng], 14);
 
   // Adiciona o mapa base do OpenStreetMap (gratuito)
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-  }).addTo(mapa);
-
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+    attribution: '© OpenStreetMap contributors © CARTO'
+}).addTo(mapa);
   // ---- Pontos culturais fictícios de exemplo ----
   const pontos = [
     {
