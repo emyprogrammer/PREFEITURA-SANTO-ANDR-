@@ -43,19 +43,22 @@ window.addEventListener('load', function () {
  * @param {HTMLElement} botao - O botão clicado na navbar
  */
 function mudarAba(nomeAba, botao) {
-  // Esconde todas as abas
   document.querySelectorAll('.aba').forEach(function (aba) {
     aba.classList.remove('ativa');
   });
 
-  // Remove o estado 'ativo' de todos os botões da navbar
   document.querySelectorAll('.nav-item').forEach(function (item) {
     item.classList.remove('ativo');
   });
 
-  // Mostra a aba selecionada e ativa o botão
   document.getElementById('aba-' + nomeAba).classList.add('ativa');
   botao.classList.add('ativo');
+
+  if (nomeAba === 'mapa' && window.mapaLeaflet) {
+    setTimeout(function () {
+      window.mapaLeaflet.invalidateSize();
+    }, 100);
+  }
 }
 
 
@@ -233,7 +236,8 @@ function inicializarMapa() {
   const lng = -46.5322;
 
   // Cria o mapa centralizado em Santo André
-  const mapa = L.map('mapa').setView([lat, lng], 14);
+ const mapa = L.map('mapa').setView([lat, lng], 14);
+window.mapaLeaflet = mapa;
 
   // Adiciona o mapa base do OpenStreetMap (gratuito)
   L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
