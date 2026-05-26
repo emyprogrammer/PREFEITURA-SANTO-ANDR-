@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meu Pedaço – Login</title>
+  <link rel="stylesheet" href="global.css" />
+  <link rel="stylesheet" href="login.css" />
+</head>
+<body>
+
+  <!-- Lado esquerdo: banner institucional -->
+  <div class="banner">
+    <div class="banner-content">
+      <div class="logo-area">
+        <div class="logo-icon">📍</div>
+        <h1 class="logo-name">Meu Pedaço</h1>
+        <p class="logo-sub">O Guia do Seu Bairro em Santo André</p>
+      </div>
+      <p class="banner-desc">
+        Registre, explore e compartilhe os pontos culturais e afetivos do seu bairro.
+        Juntos, construímos a memória viva de Santo André.
+      </p>
+      <div class="prefeitura-badge">
+        🏛️ Projeto da Prefeitura de Santo André
+      </div>
+    </div>
+  </div>
+
+  <!-- Lado direito: formulários de login e cadastro -->
+  <div class="form-side">
+    <div class="form-container">
+
+      <!-- Abas de alternância -->
+      <div class="tabs">
+        <button class="tab active" onclick="mostrarAba('login')">Entrar</button>
+        <button class="tab" onclick="mostrarAba('cadastro')">Cadastrar</button>
+      </div>
+
+      <!-- Formulário de Login -->
+      <div id="form-login" class="form-box">
+        <h2>Bem-vindo de volta!</h2>
+        <p class="form-desc">Acesse sua conta para continuar explorando.</p>
+
+        <label for="login-email">E-mail</label>
+        <input type="email" id="login-email" placeholder="seu@email.com" />
+
+        <label for="login-senha">Senha</label>
+        <input type="password" id="login-senha" placeholder="••••••••" />
+
+        <button class="btn-primary" onclick="fazerLogin()">Entrar</button>
+
+        <p class="form-link">
+          Não tem conta? <a href="#" onclick="mostrarAba('cadastro')">Cadastre-se</a>
+        </p>
+      </div>
+
+      <!-- Formulário de Cadastro -->
+      <div id="form-cadastro" class="form-box hidden">
+        <h2>Crie sua conta</h2>
+        <p class="form-desc">Junte-se à comunidade de Santo André.</p>
+
+        <label for="cad-nome">Nome completo</label>
+        <input type="text" id="cad-nome" placeholder="Seu nome" />
+
+        <label for="cad-email">E-mail</label>
+        <input type="email" id="cad-email" placeholder="seu@email.com" />
+
+        <label for="cad-senha">Senha</label>
+        <input type="password" id="cad-senha" placeholder="Crie uma senha" />
+
+        <label for="cad-confirma">Confirmar senha</label>
+        <input type="password" id="cad-confirma" placeholder="Repita a senha" />
+
+        <button class="btn-primary" onclick="fazerCadastro()">Criar conta</button>
+
+        <p class="form-link">
+          Já tem conta? <a href="#" onclick="mostrarAba('login')">Entrar</a>
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="login.js"></script>
+</body>
+</html>
