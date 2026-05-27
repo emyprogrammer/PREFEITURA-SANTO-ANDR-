@@ -1,31 +1,5 @@
 <?php
-/* =============================================================
-   backend.php — Backend completo do Meu Pedaço
-   Prefeitura de Santo André
 
-   Como usar:
-   - Coloque este arquivo num servidor com PHP (XAMPP, hospedagem)
-   - Configure as credenciais do banco abaixo ($host, $db, etc.)
-   - O GitHub Pages não roda PHP — use este arquivo em paralelo
-     com um serviço como Railway, Render, Heroku ou hospedagem
-     compartilhada (Hostinger, Locaweb, etc.)
-
-   Endpoints disponíveis (passe ?action=... na URL):
-     POST cadastrar        — cria novo usuário
-     POST login            — autentica usuário, retorna token
-     POST publicar         — cria novo post
-     GET  posts            — lista posts com curtidas e comentários
-     POST curtir           — curte ou descurte um post
-     POST comentar         — adiciona comentário a um post
-     POST atualizar_usuario — atualiza nome/e-mail
-     POST alterar_senha    — altera senha com verificação
-     POST excluir_conta    — remove conta do usuário
-     GET  pontos_mapa      — retorna pontos culturais do mapa
-     POST adicionar_ponto  — adiciona novo ponto no mapa
-============================================================= */
-
-
-// ─── CONFIGURAÇÕES ───────────────────────────────────────────
 
 define('DB_HOST', 'localhost');
 define('DB_NAME', 'meupedaco');
@@ -43,7 +17,7 @@ define('TOKEN_EXPIRA', 60 * 60 * 24 * 7);
 // ─── CABEÇALHOS CORS (permite chamadas do GitHub Pages) ──────
 
 header('Content-Type: application/json; charset=utf-8');
-header('Access-Control-Allow-Origin: *');   // Em produção, troque * pelo domínio do GitHub Pages
+header('Access-Control-Allow-Origin: *');   
 header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
 header('Access-Control-Allow-Headers: Content-Type, Authorization');
 
@@ -149,9 +123,6 @@ match (true) {
 };
 
 
-// ═══════════════════════════════════════════════════════════════
-// FUNÇÕES — USUÁRIOS
-// ═══════════════════════════════════════════════════════════════
 
 /**
  * POST /backend.php?action=cadastrar
