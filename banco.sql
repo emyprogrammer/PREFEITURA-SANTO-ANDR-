@@ -1,6 +1,5 @@
 -- =====================================================
 -- banco.sql — Estrutura do banco de dados Meu Pedaço
--- Execute este arquivo no seu MySQL/MariaDB:
 --   mysql -u root -p < banco.sql
 -- =====================================================
 
